@@ -1,9 +1,39 @@
 import 'package:flutter/material.dart';
 
+// ignore: use_key_in_widget_constructors
 class NewOrders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            new Align(
+              alignment: FractionalOffset.bottomCenter,
+              child: new Text('MINUTE MOVE'),
+            ),
+            DrawerHeader(
+              child:
+              Text('ORDERS'),
+              decoration: BoxDecoration(
+                color: const Color(0xFFF8BBD0),
+              ),
+            ),
+            ListTile(
+              title: Text('Active'),
+              tileColor: const Color(0xFFBDE0FE),
+
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Completed'),
+              tileColor: const Color(0xFFBDE0FE),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
       backgroundColor: const Color(0xFFF8BBD0),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -103,7 +133,7 @@ class NewOrders extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, "/payment");
                 },
-                child: Text('Confirm'))
+                child: const Text('Confirm'))
           ],
         ),
       ),
