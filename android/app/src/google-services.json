@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "849556841335",
+    "project_id": "minutemove-f4448",
+    "storage_bucket": "minutemove-f4448.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849556841335:android:0790060093a0d30ff33772",
+        "android_client_info": {
+          "package_name": "com.samriddhi.minutemove"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849556841335-oe0iv2sfv5hf45ej891os48ccljjbmlj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiOhYNIxZRKwszvc0MsfzbXUg38L5WeW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849556841335-oe0iv2sfv5hf45ej891os48ccljjbmlj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

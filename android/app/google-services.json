@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "206834811101",
+    "project_id": "minute-move",
+    "storage_bucket": "minute-move.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206834811101:android:1f127631616eb10863db34",
+        "android_client_info": {
+          "package_name": "com.samriddhi.minutemove"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206834811101-oln90bhsesapl0iv9kmq5rgdtstvijd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyGZFD296xvkBeTRLg02yNUtva2Lw_qrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206834811101-oln90bhsesapl0iv9kmq5rgdtstvijd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
