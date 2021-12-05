@@ -8,21 +8,19 @@ class Active extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100),
-          child: Stack(
-            fit: StackFit.expand,
-            children: <Widget>[
-              Center(
-                child: Text(
-                  "ACTIVE",
-                  style: TextStyle(
-                    fontFamily: 'Oregano',
-                    fontSize: 50,
-                  ),
-                ),
-              )
-            ],
+        appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Color(0xFFBDE0FE),
+          ),
+          backgroundColor: const Color.fromARGB(255, 20, 33, 61),
+          centerTitle: true,
+          title: const Text(
+            "ACTIVE",
+            style: TextStyle(
+              fontFamily: 'Oregano',
+              fontSize: 30,
+              color: Color(0xFFBDE0FE),
+            ),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -37,8 +35,9 @@ class Active extends StatelessWidget {
             }
           },
           type: BottomNavigationBarType.fixed,
-          backgroundColor: const Color(0xFFF8BBD0),
-          selectedItemColor: const Color.fromARGB(255, 20, 33, 61),
+          backgroundColor: const Color.fromARGB(255, 20, 33, 61),
+          selectedItemColor: const Color(0xFFF8BBD0),
+          unselectedItemColor: const Color(0xFFF8BBD0),
           selectedFontSize: 13,
           unselectedFontSize: 13,
           iconSize: 30,
@@ -62,6 +61,9 @@ class Active extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              SizedBox(
+                height: 50,
+              ),
               Container(
                 width: 35,
                 height: 125,
@@ -85,7 +87,7 @@ class Active extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, "/createorder");
+                    Navigator.pushNamed(context, "/new_orders");
                   },
                   style: OutlinedButton.styleFrom(
                       backgroundColor: Color(0xFFBDE0FE),
@@ -117,7 +119,7 @@ class Active extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, "/createorder");
+                    Navigator.pushNamed(context, "/new_orders");
                   },
                   style: OutlinedButton.styleFrom(
                       backgroundColor: Color(0xFFBDE0FE),
@@ -148,9 +150,7 @@ class Active extends StatelessWidget {
                       fontSize: 30,
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, "/createorder");
-                  },
+                  onPressed: () {},
                   style: OutlinedButton.styleFrom(
                       backgroundColor: Color(0xFFBDE0FE),
                       shape: RoundedRectangleBorder(

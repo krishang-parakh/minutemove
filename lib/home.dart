@@ -7,6 +7,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: const Color(0xFFF8BBD0),
         body: Center(
@@ -88,9 +89,20 @@ class Home extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (_) => AlertDialog(
-                          title: Text('About'),
+                          backgroundColor: const Color(0xFFBDE0FE),
+                          title: Text(
+                            'About',
+                            style: TextStyle(
+                              fontFamily: 'Oregano',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 35,
+                            ),
+                          ),
                           content: Text(
-                              'Thara Package Maare Haath Mein, Chalo Yaar Saath Mein!'),
+                            'Same day on demand intra-city courier and express delivery service in 60-90 minutes exactly when you need it. Place an order in our delivery app and system will find you the most suitable delivery partner nearby.',
+                            style:
+                                TextStyle(fontFamily: 'Oregano', fontSize: 20),
+                          ),
                         ));
               },
             ),

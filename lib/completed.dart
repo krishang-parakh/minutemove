@@ -33,6 +33,7 @@ class Completed extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Oregano',
                     fontSize: 50,
+                    color: Color(0xFFBDE0FE),
                   ),
                 ),
               )
@@ -51,8 +52,9 @@ class Completed extends StatelessWidget {
             }
           },
           type: BottomNavigationBarType.fixed,
-          backgroundColor: const Color(0xFFF8BBD0),
-          selectedItemColor: const Color.fromARGB(255, 20, 33, 61),
+          backgroundColor: const Color.fromARGB(255, 20, 33, 61),
+          selectedItemColor: const Color(0xFFF8BBD0),
+          unselectedItemColor: const Color(0xFFF8BBD0),
           selectedFontSize: 13,
           unselectedFontSize: 13,
           iconSize: 30,

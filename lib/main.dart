@@ -14,10 +14,10 @@ Future main() async {
   await Firebase.initializeApp();
   runApp(ChangeNotifierProvider(
     create: (context) => GoogleSignInProvider(),
-    child: MaterialApp(routes: {
+    child: MaterialApp(debugShowCheckedModeBanner: false, routes: {
       '/': (context) => Home(),
       '/new_orders': (context) => NewOrders(),
-      '/payment': (context) => Payment(),
+      // '/payment': (context) => Payment(),
       '/active': (context) => Active(),
       '/completed': (context) => Completed(),
     }),
