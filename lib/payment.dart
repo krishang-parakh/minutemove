@@ -2,11 +2,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Payment extends StatelessWidget {
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF8BBD0),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: (int index) {
+          if (index == 0) {
+            Navigator.pushNamed(context, "/");
+          } else if (index == 1) {
+            Navigator.pushNamed(context, "/new_orders");
+          } else {
+            Navigator.pushNamed(context, "/");
+          }
+        },
         type: BottomNavigationBarType.fixed,
         backgroundColor: const Color(0xFFF8BBD0),
         selectedItemColor: const Color.fromARGB(255, 20, 33, 61),
