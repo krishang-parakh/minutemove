@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
+// import 'package:intl/intl.dart';
 
 // ignore: use_key_in_widget_constructors
 class NewOrders extends StatelessWidget {
@@ -13,7 +14,6 @@ class NewOrders extends StatelessWidget {
   late String pickupnum;
   late String dropadd;
   late String dropnum;
-  late String datetime;
   late String instructions;
 
   @override
@@ -386,7 +386,6 @@ class NewOrders extends StatelessWidget {
                           'drop': dropadd,
                           'dropnumber': dropnum,
                           'instructions': instructions,
-                          'datetime': datetime,
                         })
                         .then((value) => print('Order added'))
                         .catchError((error) => print('Error Found'));

@@ -81,7 +81,7 @@ class Payment extends StatelessWidget {
                   fontSize: 30),
               textAlign: TextAlign.center,
             ),
-            Image.asset('assets/MMLogo.jpeg'),
+            // Image.asset('assets/MMLogo.jpeg'),
             SizedBox(
               height: 20,
             ),
