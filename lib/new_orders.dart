@@ -3,20 +3,9 @@ import 'package:date_field/date_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import './payment.dart';
+import 'myaccount.dart';
+
 // import 'package:intl/intl.dart';
-
-// class Order {
-//   final String item;
-//   final String sender;
-//   final String receiver;
-//   final String pickupadd;
-//   final String pickupnum;
-//   final String dropadd;
-//   final String dropnum;
-//   final String instructions;
-// }
-
-// ignore: use_key_in_widget_constructors
 class NewOrders extends StatelessWidget {
   CollectionReference orders = FirebaseFirestore.instance.collection('orders');
   int _selectedIndex = 0;
@@ -32,7 +21,7 @@ class NewOrders extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser;
   DocumentReference documentReference =
       FirebaseFirestore.instance.collection('orders').doc();
-  List<String> orderDetails = List<String>.filled(8, "tmp", growable: true);
+  // List<String> orderDetails = List<String>.filled(8, "tmp", growable: true);
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +57,7 @@ class NewOrders extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Completed',
+              title: Text('All Orders',
                   style: TextStyle(fontFamily: 'Oregano', fontSize: 25)),
               tileColor: const Color(0xFFBDE0FE),
               onTap: () {
@@ -87,7 +76,7 @@ class NewOrders extends StatelessWidget {
           } else if (index == 1) {
             Navigator.pushNamed(context, "/new_orders");
           } else {
-            Navigator.pushNamed(context, "/");
+            Navigator.pushNamed(context, "/myaccount");
           }
         },
         type: BottomNavigationBarType.fixed,
@@ -179,7 +168,7 @@ class NewOrders extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   onChanged: (value) {
                     sender = value;
-                    orderDetails[0] = value;
+                    // orderDetails[0] = value;
                   },
                   validator: (sender) {
                     if (sender!.isEmpty)
@@ -210,7 +199,7 @@ class NewOrders extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   onChanged: (value) {
                     item = value;
-                    orderDetails[1] = value;
+                    // orderDetails[1] = value;
                   },
                   validator: (value) {
                     if (value!.isEmpty)
@@ -241,7 +230,7 @@ class NewOrders extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   onChanged: (value) {
                     pickupadd = value;
-                    orderDetails[2] = value;
+                    // orderDetails[2] = value;
                   },
                   validator: (value) {
                     if (value!.isEmpty)
@@ -276,7 +265,7 @@ class NewOrders extends StatelessWidget {
                   keyboardType: TextInputType.number,
                   onChanged: (value) {
                     pickupnum = value;
-                    orderDetails[3] = value;
+                    // orderDetails[3] = value;
                   },
                   validator: (value) {
                     if (value!.isEmpty)
@@ -312,7 +301,7 @@ class NewOrders extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   onChanged: (value) {
                     receiver = value;
-                    orderDetails[4] = value;
+                    // orderDetails[4] = value;
                   },
                   validator: (value) {
                     if (value!.isEmpty)
@@ -343,7 +332,7 @@ class NewOrders extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   onChanged: (value) {
                     dropadd = value;
-                    orderDetails[5] = value;
+                    // orderDetails[5] = value;
                   },
                   validator: (value) {
                     if (value!.isEmpty)
@@ -378,7 +367,7 @@ class NewOrders extends StatelessWidget {
                   keyboardType: TextInputType.number,
                   onChanged: (value) {
                     dropnum = value;
-                    orderDetails[6] = value;
+                    // orderDetails[6] = value;
                   },
                   validator: (value) {
                     if (value!.isEmpty)
@@ -413,7 +402,7 @@ class NewOrders extends StatelessWidget {
                 TextFormField(
                   onChanged: (value) {
                     instructions = value;
-                    orderDetails[7] = value;
+                    // orderDetails[7] = value;
                   },
                   maxLines: 3,
                   style: TextStyle(
@@ -482,7 +471,7 @@ class NewOrders extends StatelessWidget {
                               'dropnumber': dropnum,
                               'date_str': date_str,
                               'instructions': instructions,
-                              // 'user': user.uid.toString(),
+                              'user': user!.uid.toString(),
                               'order_id': documentReference.id,
                             })
                             .then((value) => print('Order added'))
@@ -493,7 +482,6 @@ class NewOrders extends StatelessWidget {
                               builder: (context) =>
                                   Payment(documentReference.id),
                             ));
-                        print(orderDetails);
                       }
                     },
                     style: ButtonStyle(

@@ -21,7 +21,7 @@ class Payment extends StatelessWidget {
           } else if (index == 1) {
             Navigator.pushNamed(context, "/new_orders");
           } else {
-            Navigator.pushNamed(context, "/");
+            Navigator.pushNamed(context, "/myaccount");
           }
         },
         type: BottomNavigationBarType.fixed,
